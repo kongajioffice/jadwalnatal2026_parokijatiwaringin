@@ -10,6 +10,114 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+<style id="preparation-natal-redesign">
+/* Redesain khusus bagian persiapan Natal — mandiri di index.html */
+.preparation-section{
+  position:relative; overflow:hidden;
+  background:linear-gradient(180deg,#f7f4ed 0%,#fffdf8 100%);
+  padding:76px 24px 82px;
+}
+.preparation-section:before{
+  content:""; position:absolute; width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,#ead8ad55 0%,#ead8ad00 70%);
+  top:-150px;right:-100px;pointer-events:none;
+}
+.preparation-wrap{position:relative;max-width:1120px;margin:0 auto}
+.preparation-heading{max-width:850px;margin:0 auto 38px;text-align:center}
+.preparation-heading .section-kicker{
+  display:inline-block;color:#a8792c;background:#f1e6ce;border:1px solid #e7d6b3;
+  border-radius:999px;padding:8px 15px;font:800 12px/1.2 "DM Sans",Arial,sans-serif;
+  letter-spacing:2px;margin-bottom:13px
+}
+.preparation-heading h2{
+  font:800 clamp(29px,4vw,42px)/1.18 "DM Sans",Arial,sans-serif;
+  letter-spacing:-.8px;color:#172747;margin:0 0 17px
+}
+.preparation-lead{
+  max-width:760px;margin:0 auto 12px;color:#263957;
+  font:700 clamp(17px,2vw,20px)/1.6 "DM Sans",Arial,sans-serif
+}
+.preparation-intro{max-width:760px;margin:0 auto;color:#657087;font:500 16px/1.7 "DM Sans",Arial,sans-serif}
+.preparation-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.preparation-card{
+  grid-column:span 2;position:relative;display:flex;flex-direction:column;gap:15px;
+  min-height:220px;padding:25px 24px 24px;background:#fff;
+  border:1px solid #e9e2d5;border-radius:18px;
+  box-shadow:0 9px 28px rgba(27,42,68,.055);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.preparation-card:nth-child(4){grid-column:2/span 2}
+.preparation-card:nth-child(5){grid-column:4/span 2}
+.preparation-card:after{
+  content:"";position:absolute;left:24px;right:24px;top:0;height:3px;
+  border-radius:0 0 5px 5px;background:linear-gradient(90deg,#c69a4b,#ead9b6)
+}
+.preparation-number{
+  display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;
+  border-radius:14px;background:#17294b;color:#f7dfad;
+  font:800 20px/1 "DM Sans",Arial,sans-serif;box-shadow:0 5px 12px #17294b24
+}
+.preparation-card h3{
+  margin:0 0 8px;color:#1a2b49;font:800 19px/1.35 "DM Sans",Arial,sans-serif
+}
+.preparation-card p{margin:0;color:#59667a;font:500 15px/1.75 "DM Sans",Arial,sans-serif}
+.preparation-reflection{
+  position:relative;margin-top:34px;padding:34px 38px 30px;
+  overflow:hidden;text-align:center;color:#fff;
+  background:linear-gradient(135deg,#142747 0%,#203b62 100%);
+  border:1px solid #30496b;border-radius:22px;
+  box-shadow:0 15px 35px rgba(20,39,71,.16)
+}
+.preparation-reflection:before{
+  content:"“";position:absolute;top:-35px;left:22px;color:#ffffff0d;
+  font: bold 190px/1 Georgia,serif;pointer-events:none
+}
+.preparation-reflection h3{
+  position:relative;margin:0 0 22px;color:#f1d69e;
+  font:800 clamp(23px,3vw,29px)/1.25 "DM Sans",Arial,sans-serif
+}
+.preparation-reflection p{
+  position:relative;max-width:800px;margin:10px auto;color:#f2f5fa;
+  font:500 16px/1.7 "DM Sans",Arial,sans-serif
+}
+.preparation-callout{
+  position:relative;display:inline-block;margin:23px 0 20px;padding:11px 20px;
+  color:#1b2d4a;background:#f2d99f;border-radius:999px;
+  font:800 16px/1.4 "DM Sans",Arial,sans-serif
+}
+.preparation-reflection blockquote{
+  position:relative;max-width:760px;margin:0 auto;padding:19px 10px 0;
+  border-top:1px solid #ffffff35;color:#fff;
+  font:600 17px/1.65 "DM Sans",Arial,sans-serif
+}
+.preparation-reflection cite{
+  display:block;margin-top:6px;color:#f1d69e;
+  font:800 14px/1.4 "DM Sans",Arial,sans-serif;font-style:normal;letter-spacing:.5px
+}
+@media(max-width:850px){
+  .preparation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .preparation-card,.preparation-card:nth-child(4),.preparation-card:nth-child(5){grid-column:auto}
+  .preparation-card:last-child{grid-column:1/-1}
+}
+@media(max-width:600px){
+  .preparation-section{padding:52px 18px 58px}
+  .preparation-heading{text-align:left;margin-bottom:25px}
+  .preparation-heading .section-kicker{font-size:10px}
+  .preparation-heading h2{font-size:29px}
+  .preparation-lead{font-size:17px}
+  .preparation-intro{font-size:15px}
+  .preparation-grid{grid-template-columns:1fr;gap:13px}
+  .preparation-card,.preparation-card:last-child{grid-column:auto;min-height:0;padding:22px}
+  .preparation-card h3{font-size:18px}
+  .preparation-card p{font-size:15px}
+  .preparation-reflection{margin-top:23px;padding:28px 20px 24px;border-radius:18px}
+  .preparation-reflection p{font-size:15px}
+  .preparation-callout{font-size:14px;padding:10px 15px}
+  .preparation-reflection blockquote{font-size:15px}
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
