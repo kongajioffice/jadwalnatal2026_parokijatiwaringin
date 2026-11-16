@@ -229,6 +229,131 @@
 }
 </style>
 
+
+<style id="schedule-card-layout-rebuild">
+/* Layout jadwal dibangun ulang: foto tetap di kiri, isi selalu memakai seluruh kolom kanan. */
+#scheduleList.schedule-list{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:16px !important;
+  align-items:stretch !important;
+}
+#scheduleList.schedule-list > .event-card{
+  display:grid !important;
+  grid-template-columns:112px minmax(0,1fr) !important;
+  grid-template-rows:minmax(180px,auto) !important;
+  align-items:stretch !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:180px !important;
+  height:auto !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  padding:0 !important;
+  gap:0 !important;
+}
+#scheduleList.schedule-list > .event-card > img.event-image{
+  display:block !important;
+  grid-column:1 !important;
+  grid-row:1 !important;
+  width:112px !important;
+  min-width:112px !important;
+  max-width:112px !important;
+  height:100% !important;
+  min-height:180px !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  align-self:stretch !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+#scheduleList.schedule-list > .event-card > .event-main{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  grid-column:2 !important;
+  grid-row:1 !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  height:auto !important;
+  box-sizing:border-box !important;
+  padding:16px 17px !important;
+  overflow-wrap:anywhere !important;
+  word-break:normal !important;
+}
+#scheduleList.schedule-list > .event-card > .event-main h3{
+  width:100% !important;
+  max-width:none !important;
+  margin:7px 0 !important;
+  font-size:clamp(16px,1.3vw,20px) !important;
+  line-height:1.25 !important;
+  overflow-wrap:normal !important;
+  word-break:normal !important;
+}
+#scheduleList.schedule-list > .event-card > .event-main p{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 0 10px !important;
+  font-size:13px !important;
+  line-height:1.5 !important;
+  overflow-wrap:break-word !important;
+}
+#scheduleList.schedule-list .event-dates{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  column-gap:10px !important;
+  row-gap:5px !important;
+  width:100% !important;
+  min-width:0 !important;
+  align-items:start !important;
+}
+#scheduleList.schedule-list .event-dates > span,
+#scheduleList.schedule-list .event-dates > b,
+#scheduleList.schedule-list .event-dates > small{
+  min-width:0 !important;
+  overflow-wrap:break-word !important;
+}
+#scheduleList.schedule-list .event-dates > small{
+  grid-column:1 / -1 !important;
+}
+@media(max-width:760px){
+  #scheduleList.schedule-list{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  #scheduleList.schedule-list > .event-card{
+    grid-template-columns:104px minmax(0,1fr) !important;
+    grid-template-rows:minmax(164px,auto) !important;
+    min-height:164px !important;
+  }
+  #scheduleList.schedule-list > .event-card > img.event-image{
+    width:104px !important;
+    min-width:104px !important;
+    max-width:104px !important;
+    min-height:164px !important;
+  }
+  #scheduleList.schedule-list > .event-card > .event-main{
+    padding:13px 14px !important;
+  }
+  #scheduleList.schedule-list > .event-card > .event-main h3{
+    font-size:17px !important;
+  }
+}
+@media(max-width:380px){
+  #scheduleList.schedule-list > .event-card{
+    grid-template-columns:88px minmax(0,1fr) !important;
+  }
+  #scheduleList.schedule-list > .event-card > img.event-image{
+    width:88px !important;
+    min-width:88px !important;
+    max-width:88px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
