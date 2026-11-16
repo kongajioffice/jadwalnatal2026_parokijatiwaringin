@@ -180,6 +180,55 @@
 }
 </style>
 
+
+<style id="schedule-card-image-fix">
+/* Menyamakan tinggi thumbnail jadwal agar gambar portrait tidak membuat kartu melebar/menjulang */
+.schedule-list .event-card{
+  display:grid;
+  grid-template-columns:120px minmax(0,1fr);
+  align-items:stretch;
+  min-width:0;
+  overflow:hidden;
+}
+.schedule-list .event-card .event-image{
+  display:block;
+  width:120px;
+  height:100%;
+  min-height:158px;
+  max-height:190px;
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+  object-position:center;
+  align-self:stretch;
+}
+.schedule-list .event-card .event-main{
+  min-width:0;
+  width:100%;
+  box-sizing:border-box;
+  overflow-wrap:anywhere;
+}
+.schedule-list .event-card h3,
+.schedule-list .event-card p{
+  overflow-wrap:anywhere;
+}
+@media(max-width:700px){
+  .schedule-list .event-card{
+    grid-template-columns:104px minmax(0,1fr);
+  }
+  .schedule-list .event-card .event-image{
+    width:104px;
+    min-height:145px;
+    max-height:180px;
+  }
+}
+@media(max-width:420px){
+  .schedule-list .event-card{
+    grid-template-columns:92px minmax(0,1fr);
+  }
+  .schedule-list .event-card .event-image{width:92px}
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
