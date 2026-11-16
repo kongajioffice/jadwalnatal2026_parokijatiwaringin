@@ -354,6 +354,31 @@
 }
 </style>
 
+
+<style id="maria-card-image-fix">
+/* Samakan tinggi gambar Maria dengan keseluruhan kartu jadwal. */
+#scheduleList > .event-card{
+  align-items:stretch !important;
+  grid-template-rows:minmax(0,1fr) !important;
+}
+#scheduleList > .event-card > img.event-image{
+  grid-row:1 !important;
+  align-self:stretch !important;
+  height:100% !important;
+  min-height:100% !important;
+  max-height:none !important;
+  width:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  margin:0 !important;
+}
+#scheduleList > .event-card > .event-main{
+  grid-row:1 !important;
+  min-height:100% !important;
+  box-sizing:border-box !important;
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
